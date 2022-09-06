@@ -10,7 +10,6 @@ class App extends Component {
 
         return (
             <div className="App">
-                <h1>Temperature Converter</h1>
                 <Input />
             </div>
         )

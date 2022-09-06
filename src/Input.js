@@ -3,7 +3,25 @@ import {Converter} from "./Converter";
 
 
 
+const styles = {
+    select: {
 
+        height: "2.5em",
+        color: "#292b2c",
+        backgroundColor: "#fff",
+        margin: "1em"
+    },
+    result: {
+
+        height: "2.5em",
+        fontsize: "3em",
+        margin: "1em"
+    },
+    title: {
+        marginTop: "3.5em",
+        paddingBottom: "2em"
+    }
+};
 class Input extends Component {
 
     constructor(props){
@@ -31,23 +49,25 @@ class Input extends Component {
         return (
 
            <div>
+
+               <h1 style={styles.title}>Temperature Converter</h1>
                <h2>Chose your options</h2>
                <form>
-                   <select name="original" id="original" onChange={ (e) => this.setState({ original: this.setOriginal.original = e.target.value})}>
+                   <select name="original" id="original" style={styles.select} onChange={ (e) => this.setState({ original: this.setOriginal.original = e.target.value})}>
                        <option value="celcius">Celcius</option>
                        <option value="fahrenheit">Fahrenheit</option>
                        <option value="kelvin">Kelvin</option>
                    </select>
-                   <input type="number" id="toConvert" onChange={ (e) => this.setState({ toConvert: this.setToConvert.toConvert = e.target.value})}/>
-                   <select name="target" id="tartget" onChange={ (e) => this.setState({ target: this.setTarget.target= e.target.value})}>
+                   <input type="number" id="toConvert" style={styles.select} onChange={ (e) => this.setState({ toConvert: this.setToConvert.toConvert = e.target.value})}/>
+                   <select name="target" id="tartget" style={styles.select} onChange={ (e) => this.setState({ target: this.setTarget.target= e.target.value})}>
                        <option value="celcius">Celcius</option>
                        <option value="fahrenheit" selected>Fahrenheit</option>
                        <option value="kelvin">Kelvin</option>
                    </select>
-                   <button type="button" onClick={(e) => {this.convert(e)}}>Convert</button>
+                   <button type="button" style={styles.select} onClick={(e) => {this.convert(e)}}>Convert</button>
                </form>
 
-               <div id="converted">Conversion result: {this.setConverted.converted}</div>
+               <div id="converted" style={styles.result}>Conversion result: {this.setConverted.converted}</div>
            </div>
         )
     }
@@ -55,9 +75,6 @@ class Input extends Component {
     convert = (e) => {
         e.preventDefault();
         var converter = new Converter();
-        console.log(this.setOriginal.original);
-        console.log(this.setTarget.target);
-        console.log(this.setToConvert.toConvert);
         this.setState({ converted: this.setConverted.converted = converter.DecideConversion(this.setOriginal.original, this.setTarget.target, this.setToConvert.toConvert)});
     }
 
