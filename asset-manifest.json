@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Temperature-Converter/static/css/main.a7cc3a7d.css",
+    "main.js": "/Temperature-Converter/static/js/main.a7b69558.js",
+    "index.html": "/Temperature-Converter/index.html",
+    "main.a7cc3a7d.css.map": "/Temperature-Converter/static/css/main.a7cc3a7d.css.map",
+    "main.a7b69558.js.map": "/Temperature-Converter/static/js/main.a7b69558.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a7cc3a7d.css",
+    "static/js/main.a7b69558.js"
+  ]
+}
